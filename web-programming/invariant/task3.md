@@ -5,7 +5,7 @@
 
 Скриншот приложения:
 
-![](images\task-3.png)
+![](images/task-3.png)
 
 Код приложения (фрагмент script):
 ```javascript
