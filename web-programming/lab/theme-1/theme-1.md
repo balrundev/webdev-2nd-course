@@ -17,7 +17,7 @@
 
 [XML-документ](students.xml)
 
-[DTD](students.xml)
+[DTD](students.dtd)
 
 Валидация документа:
 
