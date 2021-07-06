@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            button {
+                margin-bottom: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="load-btn">Load Image</button><button id="insert-btn">Insert Image</button>
+    </body>
+    <script>
+        function cacheIm(url) {
+            const im = document.createElement('img');
+            im.src = url;
+            return im;
+        }
+
+        function insertImage(img) {
+            document.body.appendChild(img);
+            document.querySelector('img').addEventListener('click', () => {
+                document.querySelector('img').style.border = '5px solid red';
+            });
+            console.log(this);
+            this.style.display = 'none';
+        }
+
+        document.querySelector('#load-btn').addEventListener('click', ({ target }) => {
+            document.querySelector('#insert-btn').addEventListener('click',
+                insertImage.bind(target.nextSibling, cacheIm('https://cdn.pixabay.com/photo/2018/05/16/18/16/cloud-3406627_960_720.jpg')));
+            target.style.display = 'none';
+        });
+    </script>
+</html>

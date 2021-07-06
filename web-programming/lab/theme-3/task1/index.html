@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+            table thead {
+                font-weight: bold;
+            }
+            table, tr, td {
+                border: 1px solid #868686;
+                padding: 6px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead><tr><td>Валюта</td><td>Продажа</td><td>Покупка</td></tr></thead>
+            <tbody></tbody>
+        </table>
+    </body>
+    <script>
+        (async () => {
+            let response = await fetch('https://kodaktor.ru/j/rates');
+            data = await response.json();
+            data.forEach(price => {
+                document.querySelector('tbody').innerHTML += `<tr><td>${price.name}</td><td>${price.sell}</td><td>${price.buy}</td></tr>`;
+            });
+        })();
+    </script>
+</html>
